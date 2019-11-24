@@ -9,7 +9,7 @@ namespace PostAPI
 {
     public class WriteToBucket
     {
-        public static async Task<bool> PutS3Object(string bucket, string key, RequestData req)
+        public static async Task<bool> PutS3Object(string bucket, string key, PostData req)
         {
             try
             {

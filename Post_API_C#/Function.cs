@@ -25,7 +25,7 @@ namespace PostAPI
             try
             {
                 PostData post = JsonConvert.DeserializeObject<PostData>(request?.Body);
-                RequestData req = new RequestData();
+             
             
                 if (post != null)
                 {
@@ -33,7 +33,7 @@ namespace PostAPI
                     using (s3client = new AmazonS3Client(RegionEndpoint.APSoutheast1)) 
                     {
                         Console.WriteLine("Writing An Object To S3...");
-                        WriteToBucket.PutS3Object(bucketName,keyName,req); // To Write Data to Bucket
+                        WriteToBucket.PutS3Object(bucketName,keyName,post); // To Write Data to Bucket
                     }
                 }
             }
